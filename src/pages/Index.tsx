@@ -452,7 +452,7 @@ const Index = () => {
             "@type": "LocalBusiness",
             "name": "Elite Freshmart",
             "description": "Premium fresh fruits, vegetables and dry fruits store in Ambur",
-            "url": "https://elitefreshmart.com",
+            "url": "https://www.elitefreshmart.com",
             "telephone": ["+919500486772", "+917094693997"],
             "address": {
               "@type": "PostalAddress",
