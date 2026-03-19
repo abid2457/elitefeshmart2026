@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
   Phone, MessageCircle, Menu, X, Truck, ShieldCheck, Leaf, BadgeCheck,
-  DollarSign, MapPin, Instagram, ChevronRight, Heart,
+  IndianRupee, MapPin, Instagram, ChevronRight, Heart,
   Store, Award, Clock, CheckCircle2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -244,7 +244,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Us</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
-              { icon: DollarSign, title: "Fair Price Best Quality" },
+              { icon: IndianRupee, title: "Fair Price Best Quality" },
               { icon: Clock, title: "Fresh Daily Stock" },
               { icon: ShieldCheck, title: "Hygienic Products" },
               { icon: Award, title: "Trusted Local Store" },
