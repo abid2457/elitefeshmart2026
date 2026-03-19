@@ -187,8 +187,8 @@ const Index = () => {
               { icon: BadgeCheck, label: "100% Quality" },
               { icon: Leaf, label: "100% Fresh" },
               { icon: Heart, label: "100% Natural" },
-            ].map((item) => (
-              <Card key={item.label} className="text-center border-none shadow-md hover:shadow-xl transition-shadow bg-background">
+            ].map((item, i) => (
+              <Card key={item.label} className="text-center border-none shadow-md hover:shadow-xl transition-shadow bg-background stagger-fade-in" style={{ animationDelay: `${i * 150}ms` }}>
                 <CardContent className="pt-8 pb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                     <item.icon className="h-8 w-8 text-primary" />
@@ -211,10 +211,11 @@ const Index = () => {
               { img: fruitsImg, title: "Fresh Fruits", desc: "Handpicked seasonal fruits, always ripe and delicious." },
               { img: vegetablesImg, title: "Fresh Vegetables", desc: "Farm-fresh vegetables delivered daily for your table." },
               { img: dryfruitsImg, title: "Premium Dry Fruits", desc: "Top quality almonds, cashews, pistachios and more." },
-            ].map((item) => (
+            ].map((item, i) => (
               <Card
                 key={item.title}
-                className="overflow-hidden border-none shadow-md group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-background"
+                className="overflow-hidden border-none shadow-md group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-background stagger-fade-in"
+                style={{ animationDelay: `${i * 150}ms` }}
               >
                 <div className="overflow-hidden h-56">
                   <img
@@ -246,8 +247,8 @@ const Index = () => {
               { icon: Clock, title: "Fresh Daily Stock" },
               { icon: ShieldCheck, title: "Hygienic Products" },
               { icon: Award, title: "Trusted Local Store" },
-            ].map((item) => (
-              <div key={item.title} className="text-center">
+            ].map((item, i) => (
+              <div key={item.title} className="text-center stagger-fade-in" style={{ animationDelay: `${i * 150}ms` }}>
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/15 mb-4">
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -270,8 +271,8 @@ const Index = () => {
               { img: storeInteriorImg, label: "Inside Elite Freshmart Store" },
               { img: storeBusyImg, label: "Happy Customers Shopping" },
               { img: storeVegetablesImg, label: "Fresh Vegetables Selection" },
-            ].map((item) => (
-              <div key={item.label} className="relative group overflow-hidden rounded-xl aspect-square">
+            ].map((item, i) => (
+              <div key={item.label} className="relative group overflow-hidden rounded-xl aspect-square stagger-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
                 <img
                   src={item.img}
                   alt={item.label}
@@ -435,6 +436,9 @@ const Index = () => {
           </div>
           <p className="text-background/70 mb-6">Eat Healthy, Live Wealthy</p>
           <div className="flex justify-center gap-4 mb-6">
+            <a href="https://wa.me/919500486772" target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-[#25D366]/20 transition-colors">
+              <MessageCircle className="h-5 w-5" />
+            </a>
             <a href="https://www.instagram.com/elitefreshmart/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
               <Instagram className="h-5 w-5" />
             </a>
