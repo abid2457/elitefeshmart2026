@@ -319,135 +319,225 @@ const Index = () => {
         </div>
       </section>
 
+      {/* WAVE DIVIDER */}
+      <div className="bg-background">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
+          <path d="M0,40 C360,80 720,0 1440,40 L1440,80 L0,80 Z" fill="hsl(var(--secondary))" />
+        </svg>
+      </div>
+
       {/* HOME DELIVERY */}
-      <section id="delivery" className="py-20 bg-secondary">
-        <div className="container mx-auto px-4 section-fade-in text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Free Home Delivery</h2>
-          <p className="text-muted-foreground text-lg mb-12">
-            Free home delivery available for orders above ₹500.
+      <section id="delivery" className="pb-20 pt-8 bg-secondary">
+        <div className="container mx-auto px-4 section-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">Free Home Delivery</h2>
+          <p className="text-center text-muted-foreground text-lg mb-12">
+            Order from home and get fresh products delivered to your doorstep
           </p>
-          <div className="flex justify-center">
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                <Truck className="h-9 w-9 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            {[
+              { icon: MessageCircle, step: "1", title: "Order on WhatsApp", desc: "Send us your list of items" },
+              { icon: CheckCircle2, step: "2", title: "We Pack Fresh", desc: "Handpicked and hygienically packed" },
+              { icon: Truck, step: "3", title: "Delivered to You", desc: "Free delivery for orders above ₹500" },
+            ].map((item, i) => (
+              <div key={item.step} className="text-center stagger-fade-in" style={{ animationDelay: `${i * 150}ms` }}>
+                <div className="relative inline-block mb-4">
+                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                    <item.icon className="h-9 w-9 text-primary" />
+                  </div>
+                  <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">
+                    {item.step}
+                  </span>
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-1">{item.title}</h3>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
-              <span className="font-semibold text-foreground">Home Delivery</span>
-            </div>
+            ))}
           </div>
-          <a href="https://wa.me/919500486772" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="mt-10 gap-2 rounded-full px-8">
-              <MessageCircle className="h-5 w-5" /> Order Now on WhatsApp
-            </Button>
-          </a>
+          <div className="text-center">
+            <a href="https://wa.me/919500486772" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="gap-2 rounded-full px-10 text-base shadow-lg hover:shadow-xl transition-shadow">
+                <MessageCircle className="h-5 w-5" /> Order Now on WhatsApp
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* FRANCHISE */}
-      <section id="franchise" className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 section-fade-in text-center">
+      <section id="franchise" className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-40 h-40 rounded-full border-2 border-white/30" />
+          <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full border-2 border-white/20" />
+          <div className="absolute top-1/2 left-1/2 w-32 h-32 rounded-full border-2 border-white/20 -translate-x-1/2 -translate-y-1/2" />
+        </div>
+        <div className="container mx-auto px-4 section-fade-in text-center relative z-10">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/15 mb-6">
+            <Store className="h-8 w-8" />
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Your Own Elite Freshmart Franchise</h2>
           <p className="max-w-2xl mx-auto mb-8 text-white/90 text-lg">
             Elite Freshmart is expanding. Become a franchise partner and start your own freshmart store with a trusted brand.
           </p>
           <a href="tel:9894060039">
-            <Button size="lg" className="gap-2 rounded-full px-8 bg-white text-primary hover:bg-white/90 font-semibold text-base">
+            <Button size="lg" className="gap-2 rounded-full px-10 bg-white text-primary hover:bg-white/90 font-semibold text-base shadow-lg">
               <Phone className="h-5 w-5" /> Apply for Franchise
             </Button>
           </a>
           <p className="mt-6 text-white/80">
-            Franchise Contact: <a href="tel:9894060039" className="underline font-semibold">98940 60039</a>
+            Franchise Contact: <a href="tel:9894060039" className="underline font-semibold hover:text-white transition-colors">98940 60039</a>
           </p>
         </div>
       </section>
 
-      {/* GOOGLE MAP */}
-      <section className="py-20 bg-secondary">
+      {/* CONTACT + MAP COMBINED */}
+      <section id="contact" className="py-20 bg-secondary">
         <div className="container mx-auto px-4 section-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">Visit Our Store</h2>
-          <p className="text-center text-muted-foreground mb-10 flex items-center justify-center gap-2">
-            <MapPin className="h-5 w-5 text-primary" />
-            92/113 Mohammed Ali Bazaar, Ambur – 635 802
-          </p>
-          <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0!2d78.7166!3d12.7900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad41e2c0000001%3A0x1!2s92%2F113%20Mohammed%20Ali%20Bazaar%2C%20Ambur%2C%20Tamil%20Nadu%20635802!5e0!3m2!1sen!2sin!4v1710000000000"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Elite Freshmart Location - 92/113 Mohammed Ali Bazaar, Ambur"
-            />
-          </div>
-        </div>
-      </section>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">Get In Touch</h2>
+          <p className="text-center text-muted-foreground mb-12">We'd love to hear from you. Visit us or send a message!</p>
 
-      {/* CONTACT US */}
-      <section id="contact" className="py-20 bg-background">
-        <div className="container mx-auto px-4 section-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">Contact Us</h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10 text-muted-foreground">
-            <a href="tel:9500486772" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone className="h-4 w-4" /> 9500486772
-            </a>
-            <a href="tel:7094693997" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone className="h-4 w-4" /> 7094693997
-            </a>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Contact Form Card */}
+            <Card className="border-none shadow-xl bg-background">
+              <CardContent className="p-6 md:p-8">
+                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                  <MessageCircle className="h-5 w-5 text-primary" /> Send Us a Message
+                </h3>
+                <form className="space-y-4" onSubmit={handleContactSubmit}>
+                  <Input
+                    id="contact-name"
+                    placeholder="Your Name"
+                    className="rounded-full"
+                    value={formData.name}
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    required
+                    aria-label="Your Name"
+                  />
+                  <Input
+                    id="contact-phone"
+                    placeholder="Phone Number"
+                    type="tel"
+                    className="rounded-full"
+                    value={formData.phone}
+                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    required
+                    aria-label="Phone Number"
+                  />
+                  <Textarea
+                    id="contact-message"
+                    placeholder="Your Message"
+                    className="rounded-2xl min-h-[120px]"
+                    value={formData.message}
+                    onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                    required
+                    aria-label="Your Message"
+                  />
+                  <Button type="submit" size="lg" className="w-full rounded-full text-base gap-2" id="contact-submit">
+                    <MessageCircle className="h-5 w-5" /> Send via WhatsApp
+                  </Button>
+                </form>
+                <div className="flex flex-col sm:flex-row gap-4 mt-6 pt-6 border-t border-border">
+                  <a href="tel:9500486772" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+                    <Phone className="h-4 w-4" /> 9500486772
+                  </a>
+                  <a href="tel:7094693997" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+                    <Phone className="h-4 w-4" /> 7094693997
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Map Card */}
+            <div className="space-y-4">
+              <Card className="border-none shadow-xl overflow-hidden bg-background">
+                <div className="rounded-t-xl overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0!2d78.7166!3d12.7900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad41e2c0000001%3A0x1!2s92%2F113%20Mohammed%20Ali%20Bazaar%2C%20Ambur%2C%20Tamil%20Nadu%20635802!5e0!3m2!1sen!2sin!4v1710000000000"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Elite Freshmart Location - 92/113 Mohammed Ali Bazaar, Ambur"
+                  />
+                </div>
+                <CardContent className="p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <MapPin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">Visit Our Store</h3>
+                      <p className="text-muted-foreground text-sm">92/113 Mohammed Ali Bazaar, Ambur – 635 802</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-none shadow-xl bg-background">
+                <CardContent className="p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Clock className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">Store Hours</h3>
+                      <p className="text-muted-foreground text-sm">Open Daily: 7:00 AM – 10:00 PM</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-          <form className="max-w-lg mx-auto space-y-4" onSubmit={handleContactSubmit}>
-            <Input
-              id="contact-name"
-              placeholder="Your Name"
-              className="rounded-full"
-              value={formData.name}
-              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-              required
-              aria-label="Your Name"
-            />
-            <Input
-              id="contact-phone"
-              placeholder="Phone Number"
-              type="tel"
-              className="rounded-full"
-              value={formData.phone}
-              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-              required
-              aria-label="Phone Number"
-            />
-            <Textarea
-              id="contact-message"
-              placeholder="Your Message"
-              className="rounded-2xl min-h-[120px]"
-              value={formData.message}
-              onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-              required
-              aria-label="Your Message"
-            />
-            <Button type="submit" size="lg" className="w-full rounded-full text-base gap-2" id="contact-submit">
-              <MessageCircle className="h-5 w-5" /> Send via WhatsApp
-            </Button>
-          </form>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-foreground text-background py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <Leaf className="h-6 w-6" />
-            <span className="text-xl font-bold tracking-tight">Elite Freshmart</span>
+      <footer className="bg-foreground text-background py-14">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+            {/* Brand */}
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                <Leaf className="h-6 w-6" />
+                <span className="text-xl font-bold tracking-tight">Elite Freshmart</span>
+              </div>
+              <p className="text-background/60 text-sm">Premium fresh fruits, vegetables and dry fruits. Eat Healthy, Live Wealthy.</p>
+            </div>
+            {/* Quick Links */}
+            <div className="text-center">
+              <h4 className="font-semibold mb-3 text-background/90">Quick Links</h4>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-background/60">
+                {NAV_LINKS.map((link) => (
+                  <a key={link.href} href={link.href} className="hover:text-background transition-colors">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+            {/* Contact */}
+            <div className="text-center md:text-right">
+              <h4 className="font-semibold mb-3 text-background/90">Contact</h4>
+              <div className="space-y-2 text-sm text-background/60">
+                <a href="tel:9500486772" className="flex items-center justify-center md:justify-end gap-2 hover:text-background transition-colors">
+                  <Phone className="h-3.5 w-3.5" /> 9500486772
+                </a>
+                <a href="tel:7094693997" className="flex items-center justify-center md:justify-end gap-2 hover:text-background transition-colors">
+                  <Phone className="h-3.5 w-3.5" /> 7094693997
+                </a>
+              </div>
+              <div className="flex justify-center md:justify-end gap-3 mt-4">
+                <a href="https://wa.me/919500486772" target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-[#25D366]/30 transition-colors">
+                  <MessageCircle className="h-4 w-4" />
+                </a>
+                <a href="https://www.instagram.com/elitefreshmart/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
+                  <Instagram className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
-          <p className="text-background/70 mb-6">Eat Healthy, Live Wealthy</p>
-          <div className="flex justify-center gap-4 mb-6">
-            <a href="https://wa.me/919500486772" target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-[#25D366]/20 transition-colors">
-              <MessageCircle className="h-5 w-5" />
-            </a>
-            <a href="https://www.instagram.com/elitefreshmart/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors">
-              <Instagram className="h-5 w-5" />
-            </a>
+          <div className="border-t border-background/10 pt-6 text-center">
+            <p className="text-background/40 text-sm">© {new Date().getFullYear()} Elite Freshmart. All rights reserved.</p>
           </div>
-          <p className="text-background/50 text-sm">© {new Date().getFullYear()} Elite Freshmart. All rights reserved.</p>
         </div>
       </footer>
 
