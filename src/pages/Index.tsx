@@ -481,7 +481,7 @@ const Index = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Store Hours</h3>
-                      <p className="text-muted-foreground text-sm">Open Daily: 7:00 AM – 10:00 PM</p>
+                      <p className="text-muted-foreground text-sm">Open Daily: 10:00 AM – 9:00 PM</p>
                     </div>
                   </div>
                 </CardContent>
@@ -570,8 +570,8 @@ const Index = () => {
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
               "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-              "opens": "07:00",
-              "closes": "22:00"
+              "opens": "10:00",
+              "closes": "21:00"
             },
             "sameAs": [
               "https://www.instagram.com/elitefreshmart/"
