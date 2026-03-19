@@ -20,6 +20,7 @@ import fruitDisplayImg from "@/assets/fruit-display.jpg";
 import dryfruitsDisplayImg from "@/assets/dryfruits-display.jpg";
 import storeBusyImg from "@/assets/store-busy.jpg";
 import storeVegetablesImg from "@/assets/store-vegetables.jpg";
+import storeVideo from "@/assets/store-video.mp4";
 
 // Scroll animation hook
 function useScrollAnimation() {
@@ -292,19 +293,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* INSTAGRAM REEL */}
+      {/* STORE VIDEO */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 section-fade-in text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Watch Our Fresh Products</h2>
           <p className="text-muted-foreground mb-10">See our fresh fruits, vegetables and dry fruits in action.</p>
-          <div className="max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl">
-            <iframe
-              src="https://www.instagram.com/reel/DVkT3SDP1Bp/embed"
+          <div className="max-w-lg mx-auto rounded-2xl overflow-hidden shadow-xl">
+            <video
+              src={storeVideo}
+              controls
+              loop
+              muted
+              playsInline
+              preload="metadata"
               className="w-full"
-              style={{ minHeight: 500, border: "none" }}
-              allowFullScreen
-              loading="lazy"
-              title="Elite Freshmart Instagram Reel - Fresh Products Showcase"
+              poster={storeFrontImg}
+              aria-label="Elite Freshmart store video showcasing fresh products"
             />
           </div>
           <a href="https://www.instagram.com/elitefreshmart/" target="_blank" rel="noopener noreferrer">
