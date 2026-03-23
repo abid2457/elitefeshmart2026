@@ -21,6 +21,7 @@ import dryfruitsDisplayImg from "@/assets/dryfruits-display.jpg";
 import storeBusyImg from "@/assets/store-busy.jpg";
 import storeVegetablesImg from "@/assets/store-vegetables.jpg";
 import storeVideo from "@/assets/store-video.mp4";
+import logoImg from "@/assets/elitefreshmart logo.jpeg";
 
 // Scroll animation hook
 function useScrollAnimation() {
@@ -95,7 +96,7 @@ const Index = () => {
       >
         <div className="container mx-auto flex items-center justify-between px-4 py-3 md:py-4">
           <a href="#" className="flex items-center gap-2" aria-label="Elite Freshmart - Home">
-            <Leaf className="h-7 w-7 text-primary" />
+            <img src={logoImg} alt="Elite Freshmart Logo" className="h-10 w-10 rounded-full object-cover" />
             <span className="text-xl font-bold text-primary tracking-tight">Elite Freshmart</span>
           </a>
           <div className="hidden md:flex items-center gap-6">
@@ -498,7 +499,7 @@ const Index = () => {
             {/* Brand */}
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-                <Leaf className="h-6 w-6" />
+                <img src={logoImg} alt="Elite Freshmart Logo" className="h-9 w-9 rounded-full object-cover" />
                 <span className="text-xl font-bold tracking-tight">Elite Freshmart</span>
               </div>
               <p className="text-background/60 text-sm">Premium fresh fruits, vegetables and dry fruits. Eat Healthy, Live Wealthy.</p>
