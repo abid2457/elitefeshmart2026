@@ -267,12 +267,12 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {[
-              { img: storeFrontImg, label: "Our Store Front" },
-              { img: fruitDisplayImg, label: "Fresh Fruits Display at Elite Freshmart" },
-              { img: dryfruitsDisplayImg, label: "Premium Dry Fruits Collection" },
-              { img: storeInteriorImg, label: "Inside Elite Freshmart Store" },
-              { img: storeBusyImg, label: "Happy Customers Shopping" },
-              { img: storeVegetablesImg, label: "Fresh Vegetables Selection" },
+              { img: storeFrontImg, label: "Elite Freshmart store front – fruits, vegetables and dry fruits shop in Ambur, Tamil Nadu" },
+              { img: fruitDisplayImg, label: "Fresh fruits display with seasonal fruits at Elite Freshmart Ambur" },
+              { img: dryfruitsDisplayImg, label: "Premium dry fruits and nuts dispensers at Elite Freshmart Ambur showroom" },
+              { img: storeInteriorImg, label: "Inside Elite Freshmart – fresh vegetables and banana section in Ambur store" },
+              { img: storeBusyImg, label: "Vegetables and grocery shopping at Elite Freshmart Ambur, Tamil Nadu" },
+              { img: storeVegetablesImg, label: "Fresh vegetables, coconuts and daily essentials at Elite Freshmart Ambur" },
             ].map((item, i) => (
               <div key={item.label} className="relative group overflow-hidden rounded-xl aspect-square stagger-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
                 <img
